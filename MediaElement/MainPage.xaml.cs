@@ -1,15 +1,11 @@
-﻿using CommunityToolkit.Maui.Views;
-
-namespace MediaElement;
+﻿namespace MediaElement;
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
-
-	public MainPage()
-	{
-		InitializeComponent();
-	}
+    public MainPage()
+    {
+        InitializeComponent();
+    }
 
     private void OnCounterClicked(object sender, EventArgs e)
     {
@@ -19,4 +15,3 @@ public partial class MainPage : ContentPage
             mediaElement.Play();
     }
 }
-

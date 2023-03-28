@@ -11,9 +11,7 @@
             VerticalOptions="Center">
 
             <toolkit:MediaElement x:Name="mediaElement" WidthRequest="400" HeightRequest="300"
-                                  Source="embed://AndroidVideo.mp4"/>
-
-            <!--Source="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"-->
+                                  Source="embed://AndroidVideo.mp4" />
 
             <Button
                 x:Name="CounterBtn"
@@ -21,8 +19,6 @@
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Center" />
-
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>
