@@ -1,17 +1,24 @@
-﻿namespace MediaElement;
+﻿
+using MediaElement.ViewModels;
+using Mopups.Services;
+using Mopups.Interfaces;
+
+namespace MediaElement;
 
 public partial class MainPage : ContentPage
 {
-    public MainPage()
+    IPopupNavigation popupNavigation;
+    public MainPage(IPopupNavigation popupNavigation)
     {
-        InitializeComponent();
+        this.InitializeComponent();
+        BindingContext = new VideoUrlViewModel();
+        this.popupNavigation = popupNavigation;
     }
 
     private void OnCounterClicked(object sender, EventArgs e)
     {
-        if (mediaElement.CurrentState == CommunityToolkit.Maui.Core.Primitives.MediaElementState.Playing)
-            mediaElement.Pause();
-        else if (mediaElement.CurrentState == CommunityToolkit.Maui.Core.Primitives.MediaElementState.Paused)
-            mediaElement.Play();
+        popupNavigation.PushAsync(new MyPopupPage());
     }
+
+
 }
