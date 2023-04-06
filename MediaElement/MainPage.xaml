@@ -8,9 +8,10 @@
         <VerticalStackLayout
             Spacing="25"
             Padding="30,0"
+            Margin="0,50,0,0"
             VerticalOptions="Center">
 
-            <toolkit:MediaElement x:Name="mediaElement" WidthRequest="400" HeightRequest="300"
+            <!--<toolkit:MediaElement x:Name="mediaElement" WidthRequest="400" HeightRequest="300"
                                   Source="embed://AndroidVideo.mp4" />
 
             <Button
@@ -18,7 +19,25 @@
                 Text="Click me"
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
+                HorizontalOptions="Center" />-->
+
+
+            <!--<WebView Source="{Binding WebViewSource}" HorizontalOptions="Fill"
+    VerticalOptions="FillAndExpand">
+               
+            </WebView>-->
+
+
+
+            <Button
+                x:Name="CounterBtn"
+                Text="Click me"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
                 HorizontalOptions="Center" />
+
+
+
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
