@@ -1,13 +1,12 @@
-﻿
-using MediaElement.ViewModels;
-using Mopups.Services;
+﻿using MediaElement.ViewModels;
 using Mopups.Interfaces;
 
 namespace MediaElement;
 
 public partial class MainPage : ContentPage
 {
-    IPopupNavigation popupNavigation;
+    private IPopupNavigation popupNavigation;
+
     public MainPage(IPopupNavigation popupNavigation)
     {
         this.InitializeComponent();
@@ -19,6 +18,4 @@ public partial class MainPage : ContentPage
     {
         popupNavigation.PushAsync(new MyPopupPage());
     }
-
-
 }

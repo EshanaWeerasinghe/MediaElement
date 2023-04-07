@@ -5,15 +5,10 @@ namespace MediaElement.ViewModels
 {
     public class VideoUrlViewModel : INotifyPropertyChanged
     {
-
         private HtmlWebViewSource _webViewSource;
 
         public HtmlWebViewSource WebViewSource
         {
-            //get
-            //{
-            //    return new HtmlWebViewSource { Html = Flag.Description };
-            //}
             get => _webViewSource;
             set
             {
@@ -27,18 +22,16 @@ namespace MediaElement.ViewModels
         {
             _webViewSource = new HtmlWebViewSource();
 
-           // string vidUrl = "https://www.youtube.com/embed/qu0HN9rYtIw";
-
-            string htmlContent = @"<![CDATA[
+            string htmlContent = @"
                 <HTML>
                 <BODY>
-               <iframe width=""956"" height=""538"" src=""https://www.youtube.com/embed/qu0HN9rYtIw"" 
+               <iframe width=""400"" height=""200"" src=""https://www.youtube.com/embed/qu0HN9rYtIw"" 
                 title="""" frameborder=""0"" 
                 allow=""accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"" 
                 allowfullscreen></iframe>
                 </BODY>
                 </HTML>
-                ]]>";
+                ";
 
             WebViewSource.Html = htmlContent;
         }
@@ -57,6 +50,7 @@ namespace MediaElement.ViewModels
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
         protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
             var changed = PropertyChanged;
@@ -65,6 +59,5 @@ namespace MediaElement.ViewModels
 
             changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
     }
 }
